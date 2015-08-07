@@ -2,7 +2,6 @@
 //require('./static/js/jquery-2.1.1')
 // jQuery UI
 //require('./static/js/plugins/jquery-ui/jquery-ui.min')
-
 require('./static/js/bootstrap.min')
 require('./static/css/bootstrap.min.css!')
 require('./static/font-awesome/css/font-awesome.css!')
@@ -13,7 +12,10 @@ require('./static/js/plugins/metisMenu/jquery.metisMenu')
 require('./static/js/plugins/slimscroll/jquery.slimscroll.min')
 
 // Custom and plugin javascript
-require('./static/js/inspinia')
+//require('./static/js/inspinia')
+
+//require('./inpinia-control')
+
 require('./static/js/plugins/pace/pace.min')
 
 // Flot
