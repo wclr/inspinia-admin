@@ -1,0 +1,5 @@
+require('./static/css/plugins/datapicker/datepicker3.css!')
+require('./static/css/plugins/clockpicker/clockpicker.css!')
+require('./static/css/plugins/daterangepicker/daterangepicker-bs3.css!')
+require('./static/js/plugins/datapicker/bootstrap-datepicker')
+require('./static/js/plugins/clockpicker/clockpicker')
