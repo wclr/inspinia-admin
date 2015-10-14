@@ -6,6 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "system": {
+    "meta": {
+      "inspinia-admin/static/js/bootstrap.min": {
+        "deps": ["jquery"]
+      }
+    }
+  },
   "author": "",
   "license": "ISC"
 }
