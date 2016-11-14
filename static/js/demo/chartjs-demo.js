@@ -77,7 +77,7 @@ $(function () {
         barStrokeWidth: 2,
         barValueSpacing: 5,
         barDatasetSpacing: 1,
-        responsive: true,
+        responsive: true
     }
 
 

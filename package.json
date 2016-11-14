@@ -1,17 +1,23 @@
 {
   "name": "inspinia-admin",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "INSPINIA - Responsive Admin Theme, Static for StealJS, version 2.4",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "system": {
+	"map": {
+		"./pacex": "./static/js/pace/pace.min"
+	},
     "meta": {
       "inspinia-admin/static/js/bootstrap.min": {
         "deps": ["jquery"]
       }
-    }
+    },
+	"paths": {
+		"./pace.js": "./static/js/pace/pace.min.js"
+	}
   },
   "author": "",
   "license": "ISC"

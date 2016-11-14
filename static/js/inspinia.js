@@ -1,12 +1,13 @@
 /*
  *
  *   INSPINIA - Responsive Admin Theme
- *   version 2.2
+ *   version 2.4
  *
  */
 
 
 $(document).ready(function () {
+
 
     // Add body-small class if window less than 768px
     if ($(this).width() < 769) {
@@ -38,10 +39,28 @@ $(document).ready(function () {
         content.remove();
     });
 
+    // Fullscreen ibox function
+    $('.fullscreen-link').click(function () {
+        var ibox = $(this).closest('div.ibox');
+        var button = $(this).find('i');
+        $('body').toggleClass('fullscreen-ibox-mode');
+        button.toggleClass('fa-expand').toggleClass('fa-compress');
+        ibox.toggleClass('fullscreen');
+        setTimeout(function () {
+            $(window).trigger('resize');
+        }, 100);
+    });
+
     // Close menu in canvas mode
     $('.close-canvas-menu').click(function () {
         $("body").toggleClass("mini-navbar");
         SmoothlyMenu();
+    });
+
+    // Run menu of canvas
+    $('body.canvas-menu .sidebar-collapse').slimScroll({
+        height: '100%',
+        railOpacity: 0.9
     });
 
     // Open close right sidebar
@@ -79,10 +98,10 @@ $(document).ready(function () {
 
     // Append config box / Only for demo purpose
     // Uncomment on server mode to enable XHR calls
-    //$.get("skin-config.html", function (data) {
-    //    if (!$('body').hasClass('no-skin-config'))
-    //        $('body').append(data);
-    //});
+    $.get("skin-config.html", function (data) {
+        if (!$('body').hasClass('no-skin-config'))
+            $('body').append(data);
+    });
 
     // Minimalize menu
     $('.navbar-minimalize').click(function () {
@@ -118,7 +137,11 @@ $(document).ready(function () {
         }
 
         if ($('body').hasClass('fixed-nav')) {
-            $('#page-wrapper').css("min-height", $(window).height() - 60 + "px");
+            if (navbarHeigh > wrapperHeigh) {
+                $('#page-wrapper').css("min-height", navbarHeigh - 60 + "px");
+            } else {
+                $('#page-wrapper').css("min-height", $(window).height() - 60 + "px");
+            }
         }
 
     }
@@ -245,14 +268,14 @@ function SmoothlyMenu() {
         // For smoothly turn on menu
         setTimeout(
             function () {
-                $('#side-menu').fadeIn(500);
-            }, 100);
+                $('#side-menu').fadeIn(400);
+            }, 200);
     } else if ($('body').hasClass('fixed-sidebar')) {
         $('#side-menu').hide();
         setTimeout(
             function () {
-                $('#side-menu').fadeIn(500);
-            }, 300);
+                $('#side-menu').fadeIn(400);
+            }, 100);
     } else {
         // Remove all inline style from jquery fadeIn function to reset menu state
         $('#side-menu').removeAttr('style');
